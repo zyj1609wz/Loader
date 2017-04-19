@@ -5,6 +5,8 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import com.app.loader.R;
@@ -15,6 +17,8 @@ public class SmsActivity extends AppCompatActivity {
     private ListView lv;
     private SimpleCursorAdapter adapter;
     private LoaderManager.LoaderCallbacks loaderCallbacks ;
+
+    private EditText editText ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,10 +38,17 @@ public class SmsActivity extends AppCompatActivity {
         loaderCallbacks = new MyCallback() ;
         getLoaderManager().initLoader( loaderId , null,  loaderCallbacks );
 
-        //开始查询
-        Bundle bundle = new Bundle();
-        bundle.putString("key", "小");
-        getLoaderManager().restartLoader(1, bundle, loaderCallbacks  );
+        editText = (EditText) findViewById( R.id.editText );
+        findViewById( R.id.start).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //开始查询
+                String tag = editText.getText().toString() ;
+                Bundle bundle = new Bundle();
+                bundle.putString("key", tag );
+                getLoaderManager().restartLoader( loaderId , bundle, loaderCallbacks  );
+            }
+        });
 
     }
 
@@ -49,13 +60,10 @@ public class SmsActivity extends AppCompatActivity {
             return loader ;
         }
 
-
-
         @Override
         public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
             adapter.changeCursor( data );
         }
-
 
         @Override
         public void onLoaderReset(Loader loader) {

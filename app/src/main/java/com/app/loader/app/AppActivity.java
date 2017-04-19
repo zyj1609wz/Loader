@@ -5,11 +5,9 @@ import android.content.Loader;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ListView;
-
-import com.app.loader.MainActivity;
 import com.app.loader.R;
-
 import java.util.List;
 
 /**
@@ -36,7 +34,13 @@ public class AppActivity extends AppCompatActivity {
 
         getLoaderManager().initLoader( 1 , null,  loaderCallbacks );
 
-        getLoaderManager().restartLoader( 1 , null , loaderCallbacks ) ;
+        findViewById( R.id.start).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getLoaderManager().restartLoader( 1 , null , loaderCallbacks ) ;
+            }
+        });
+
     }
 
     class MyCallback implements LoaderManager.LoaderCallbacks<List<AppBean>>{
