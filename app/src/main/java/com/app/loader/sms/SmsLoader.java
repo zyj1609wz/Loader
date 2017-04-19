@@ -39,6 +39,5 @@ public class SmsLoader extends AsyncTaskLoader<Cursor> {
     protected void onStartLoading() {
         super.onStartLoading();
         forceLoad();
-
     }
 }
