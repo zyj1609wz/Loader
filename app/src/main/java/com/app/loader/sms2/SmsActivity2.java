@@ -1,8 +1,9 @@
-package com.app.loader.sms;
+package com.app.loader.sms2;
 
 import android.app.LoaderManager;
 import android.content.Loader;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -12,9 +13,9 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import com.app.loader.R;
 
-public class SmsActivity extends AppCompatActivity {
+public class SmsActivity2 extends AppCompatActivity {
 
-    private int loaderId = 0 ;
+    private int loaderId = 6 ;
     private ListView lv;
     private SimpleCursorAdapter adapter;
     private LoaderManager.LoaderCallbacks loaderCallbacks ;
@@ -68,8 +69,12 @@ public class SmsActivity extends AppCompatActivity {
         @Override
         public Loader onCreateLoader(int id, Bundle args) {
             Log.e( "loader", "onCreateLoader: ");
-            SmsLoader loader = new SmsLoader( SmsActivity.this , args);
-            return loader  ;
+
+            Uri uri = Uri.parse("content://sms");
+            String []colums = {"_id","address","body"};
+            SmsLoader2 loader2 = new SmsLoader2( SmsActivity2.this , uri , colums , null , null , null  ) ;
+
+            return loader2  ;
         }
 
         @Override

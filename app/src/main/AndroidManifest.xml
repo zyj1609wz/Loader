@@ -21,6 +21,7 @@
 
         <activity android:name=".app.AppActivity"></activity>
         <activity android:name=".sms.SmsActivity"></activity>
+        <activity android:name=".sms2.SmsActivity2"></activity>
 
     </application>
 
