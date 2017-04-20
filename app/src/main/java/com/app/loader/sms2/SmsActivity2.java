@@ -80,7 +80,7 @@ public class SmsActivity2 extends AppCompatActivity {
         @Override
         public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
             Log.e( "loader", "onLoadFinished: ");
-            adapter.changeCursor( data );
+            adapter.swapCursor( data );
         }
 
         @Override

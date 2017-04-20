@@ -27,6 +27,8 @@ SmsActivity2 的 Loader 是基于 CursorLoader 。用 CursorLoader 的好处是�
 
 ## 其他
 
+- [官方文档](https://developer.android.com/guide/components/loaders.html)
+
 - [Android Loader 异步加载详解](http://blog.csdn.net/zhaoyanjun6/article/details/70241844)
 
 - [Android Loader 异步加载详解二：探寻Loader内部机制](http://blog.csdn.net/zhaoyanjun6/article/details/70259914)
