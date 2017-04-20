@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.app.loader.app.AppActivity;
 import com.app.loader.sms.SmsActivity;
+import com.app.loader.sms2.SmsActivity2;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +27,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity( new Intent( MainActivity.this , AppActivity.class ));
+            }
+        });
+
+        findViewById( R.id.sms2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity( new Intent( MainActivity.this , SmsActivity2.class ));
             }
         });
     }

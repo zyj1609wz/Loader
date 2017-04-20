@@ -6,13 +6,19 @@
     android:orientation="vertical"
     tools:context="com.app.loader.MainActivity">
 
-   <Button
-       android:id="@+id/sms"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="读取手机里面的短信"
-       />
+    <Button
+        android:id="@+id/sms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="读取手机里面的短信"
+        />
 
+    <Button
+        android:id="@+id/sms2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="读取手机里面的短信2"
+        />
 
     <Button
         android:id="@+id/app"
