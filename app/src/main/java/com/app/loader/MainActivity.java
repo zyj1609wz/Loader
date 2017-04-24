@@ -36,11 +36,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity( new Intent( MainActivity.this , SmsActivity2.class ));
             }
         });
-
-        //dsds
-        //789
-
-        //789653245
-        //hahhaha
     }
 }
