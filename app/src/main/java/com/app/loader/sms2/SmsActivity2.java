@@ -108,6 +108,5 @@ public class SmsActivity2 extends AppCompatActivity {
         Log.e( "loader", "activity onDestroy: ");
         super.onDestroy();
     }
-    
-    //test2
+   
 }
