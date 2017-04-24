@@ -1,6 +1,10 @@
 # Loader
 android loader demo 实例
 
+效果图：
+
+![image](image/loader1.png)  ![image](image/loader2.png) ![image](image/loader3.png)
+
 ## 项目简介：
 - AppActivity 加载系统 app
 
